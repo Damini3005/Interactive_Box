@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.container {
+  background: #fff;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.title::before,
+.title::after {
+  content: "";
+  width: 96.63px;
+  flex: 1;
+  height: 1px;
+  background-color: #8d8a8a;
+}
+.title span {
+  color: #ff6b82;
+  white-space: nowrap;
+}
+.card {
+  display: block;
+  width: 360px;
+  border: 1px solid #c8c8c8;
+  border-radius: 5px;
+  padding: 14px;
+  margin-bottom: 16px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.card-content {
+  position: relative; /* Parent container for absolute positioning */
+}
+
+.circular-btn {
+  /* Exact Dimensions Jo Aapne Maangi Hain */
+  width: 14.46px;
+  height: 14.46px;
+  border: 0.9px solid #ff6b82;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 3px;
+  left: -1px;
+  /* background-color: #ff6b82; */
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner-circle {
+  display: none;
+  width: 9.04px;
+  height: 9.04px;
+  background-color: #ff6b82; /* Inner circle ka color */
+  border-radius: 50%;
+
+  /* Aapke diye gaye Coordinates */
+  position: fixed; /* Ya absolute, context ke hisaab se */
+}
+.circular-btn:focus .inner-circle,
+.circular-btn:active .inner-circle {
+  display: block;
+}
+.circular-btn:focus {
+  border-width: 1.5px;
+}
+
+.circular-btn:hover {
+  background-color: rgba(34, 56, 177, 0.1);
+}
+
+.card .card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-extra {
+  max-height: 0; /* Section ki height zero rakho */
+  opacity: 0; /* Invisible rakho */
+  overflow: hidden; /* Content ko bahar mat aane do */
+  transition: all 0.4s ease-in-out; /* Smooth expansion animation */
+  margin-top: 0;
+  padding-left: 25px; /* Text ke saath align karne ke liye */
+}
+
+.card .card-extra {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  transition: all 0.3s ease;
+}
+
+.card.active .card-extra {
+  max-height: 300px; /* Isse content niche ki taraf expand hoga */
+  opacity: 1;
+  margin-top: 15px;
+}
+.card.active .inner-circle {
+  display: block; /* Inner circle tabhi dikhega jab card active hoga */
+}
+
+.card.active {
+  border: 2px solid #ff6b82;
+  background: #fff5f7;
+}
+
+/* .card input[type="checkbox"]:checked ~ .card-extra {
+  opacity: 1;
+  max-height: 300px;
+  margin-top: 14px;
+} */
+
+.card-extra .row {
+  /* display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px; */
+  display: grid;
+  grid-template-columns: 40px 100px 100px;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* .card-extra select {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 80px;
+} */
+
+.header {
+  margin-bottom: 6px;
+}
+
+.header span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.index {
+  font-size: 14px;
+  color: #333;
+}
+
+select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25px;
+}
+
+.card strong {
+  font-size: 14.46px;
+}
+
+.sub {
+  font-size: 12px;
+  color: #000000;
+}
+
+.badge {
+  background: #ff6b82;
+  width: 55px;
+  height: 17px;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 2px 6px;
+  border-radius: 1px;
+  margin-left: 6px;
+}
+
+.price {
+  text-align: right;
+}
+.price1 {
+  text-align: right;
+  margin-left: 10px;
+  margin-top: -30px;
+}
+
+.price del {
+  margin-right: 22px;
+  font-size: 10px;
+  color: #777;
+}
+
+.popular {
+  border: 2px solid #ff6b82;
+  background: #fff5f7;
+}
+
+.ribbon {
+  position: absolute;
+  width: 119px;
+  height: 26px;
+  top: -1px;
+  right: 2px;
+  background: #ff6b82;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 1px;
+}
+
+.options {
+  margin-top: 10px;
+}
+
+.options div {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+/* select {
+  padding: 4px;
+} */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.free {
+  color: #ff6b82;
+  font-size: 13px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff6b82;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.powered {
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  color: #9b9b9b;
+  margin-top: 10px;
+  margin-left: 235px;
+}
