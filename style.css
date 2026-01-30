@@ -50,11 +50,10 @@ body {
 }
 
 .card-content {
-  position: relative; /* Parent container for absolute positioning */
+  position: relative;
 }
 
 .circular-btn {
-  /* Exact Dimensions Jo Aapne Maangi Hain */
   width: 14.46px;
   height: 14.46px;
   border: 0.9px solid #ff6b82;
@@ -63,7 +62,7 @@ body {
   position: absolute;
   top: 3px;
   left: -1px;
-  /* background-color: #ff6b82; */
+
   padding: 0;
   cursor: pointer;
   outline: none;
@@ -75,11 +74,10 @@ body {
   display: none;
   width: 9.04px;
   height: 9.04px;
-  background-color: #ff6b82; /* Inner circle ka color */
+  background-color: #ff6b82;
   border-radius: 50%;
 
-  /* Aapke diye gaye Coordinates */
-  position: fixed; /* Ya absolute, context ke hisaab se */
+  position: fixed;
 }
 .circular-btn:focus .inner-circle,
 .circular-btn:active .inner-circle {
@@ -99,14 +97,13 @@ body {
   align-items: center;
 }
 .card-extra {
-  max-height: 0; /* Section ki height zero rakho */
-  opacity: 0; /* Invisible rakho */
-  overflow: hidden; /* Content ko bahar mat aane do */
-  transition: all 0.4s ease-in-out; /* Smooth expansion animation */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
   margin-top: 0;
-  padding-left: 25px; /* Text ke saath align karne ke liye */
+  padding-left: 25px;
 }
-
 .card .card-extra {
   opacity: 0;
   max-height: 0;
@@ -116,12 +113,12 @@ body {
 }
 
 .card.active .card-extra {
-  max-height: 300px; /* Isse content niche ki taraf expand hoga */
+  max-height: 300px;
   opacity: 1;
   margin-top: 15px;
 }
 .card.active .inner-circle {
-  display: block; /* Inner circle tabhi dikhega jab card active hoga */
+  display: block;
 }
 
 .card.active {
@@ -129,30 +126,13 @@ body {
   background: #fff5f7;
 }
 
-/* .card input[type="checkbox"]:checked ~ .card-extra {
-  opacity: 1;
-  max-height: 300px;
-  margin-top: 14px;
-} */
-
 .card-extra .row {
-  /* display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 8px; */
   display: grid;
   grid-template-columns: 40px 100px 100px;
   gap: 12px;
   align-items: center;
   margin-bottom: 12px;
 }
-
-/* .card-extra select {
-  padding: 4px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  min-width: 80px;
-} */
 
 .header {
   margin-bottom: 6px;
@@ -246,10 +226,6 @@ select {
   gap: 6px;
   margin-bottom: 6px;
 }
-
-/* select {
-  padding: 4px;
-} */
 
 .footer {
   display: flex;
